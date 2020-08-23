@@ -1,5 +1,4 @@
 import React from 'react';
-import './App.css';
 import Chat from './components/Chat';
 import SendMsgForm from "./components/SendMsgForm";
 import ChatContextProvider from './contexts/ChatContext';
