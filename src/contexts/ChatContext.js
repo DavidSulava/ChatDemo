@@ -10,7 +10,6 @@ const ChatContextProvider = (props) => {
     const initialState = { msgUser:{name:'', message:''}, msgInProgress: false, msgAll:[ ]};
     const [state, dispatch] = useReducer( msgReducer, initialState );
 
-    const [msgAll] = useState([]);
 
     /**
      * Get all messages from database, when component mounts.
