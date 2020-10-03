@@ -1,4 +1,4 @@
-import React, {createContext, useReducer, useEffect, useState} from 'react';
+import React, { createContext, useReducer, useEffect } from 'react';
 import {msgReducer} from '../reducers/msgReducer';
 import firebase from "firebase";
 import db from "../firebase";
@@ -7,9 +7,8 @@ export const ChatContext = createContext();
 
 const ChatContextProvider = (props) => {
 
-    const initialState = { msgUser:{name:'', message:''}, msgInProgress: false, msgAll:[ ]};
+    const initialState      = { msgUser:{name:'', message:''}, msgInProgress: false, msgAll:[ ]};
     const [state, dispatch] = useReducer( msgReducer, initialState );
-
 
     /**
      * Get all messages from database, when component mounts.

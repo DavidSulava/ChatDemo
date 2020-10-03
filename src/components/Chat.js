@@ -6,7 +6,7 @@ import { ChatContext } from '../contexts/ChatContext';
  */
 function Chat() {
 
-    const context = useContext(ChatContext);
+    const context   = useContext(ChatContext);
     var currentUser = context.msgUser.name;
 
     const currentDate = new Date( ).toLocaleDateString();
