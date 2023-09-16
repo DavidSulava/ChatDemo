@@ -1,12 +1,10 @@
 
 # Descrption
-Дэмка чата. Можно обмениваться сообщениями.
+Chat demo. You can exchange messages.
 
-Реализовано с помощью React и Firebase
+Implemented using React and Firebase.
 
-Можно посмотреть сдесь 👉 https://chat-react-ba518.web.app/ 👈
-
-
+You can view it here. 👉 https://chat-react-ba518.web.app/ 👈
 
 ## Stack
 ```
