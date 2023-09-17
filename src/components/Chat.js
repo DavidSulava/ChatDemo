@@ -17,7 +17,6 @@ function Chat() {
     useEffect(() => {
         if (refScroll.children.length)
             refScroll.scrollTo(0, refScroll.scrollHeight);
-
     }, [context.msgAll]);
 
     return (

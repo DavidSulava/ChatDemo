@@ -17,7 +17,6 @@ const ChatContextProvider = (props) => {
         db.collection("messages").orderBy("created_at", "asc").limitToLast(100).onSnapshot(snapshot => {
             dispatch({type: "ADD_MSG_All", msgAll: snapshot.docs.map(doc => ({id: doc.id, ...doc.data()}))})
         });
-
     }, []);
     /**
      * Send a Message to database, when the msgUser changes
@@ -36,11 +35,8 @@ const ChatContextProvider = (props) => {
                 .catch((err) => {
                     console.log(err);
                 });
-
-
             dispatch({type: "ADD_MSG", msgUser: {name: state.msgUser.name, message: ''}});
         }
-
     }, [state.msgUser.name, state.msgUser.message]);
 
     return (
