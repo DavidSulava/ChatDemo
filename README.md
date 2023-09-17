@@ -1,13 +1,14 @@
 
-# Descrption
-Chat demo. You can exchange messages.
+# Description
+Currency converter for Android.<br/>
+Implements a custom selector that emulates the original `<select>` interface for Android.
 
-Implemented using React and Firebase.
+Uses the API [cbr-xml-daily](https://www.cbr-xml-daily.ru/).<br/>
 
-You can view it here. 👉 https://chat-react-ba518.web.app/ 👈
+APK - can be downloaded 👉 [here](https://drive.google.com/file/d/13fWo103jZaFTeyZb9JmhofPXqW4liBSf/view?usp=sharing)<br/>
+Web version 👉 [here](https://github.com/DavidSulava/currency-converter)<br/>
 
-## Stack
+### Used libraries:
 ```
-React( react hooks, react functional components )
-Firebase
+- React native( Redux, react-navigation )
 ```
