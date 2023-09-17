@@ -4,7 +4,7 @@ Chat demo. You can exchange messages.
 
 Implemented using React and Firebase.
 
-You can view it here. 👉 https://chat-react-ba518.web.app/ 👈
+You can view it. 👉 [here](https://davidsulava.github.io/ChatDemo/) 👈
 
 ### Used libraries:
 ```
