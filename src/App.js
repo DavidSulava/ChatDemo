@@ -6,13 +6,13 @@ import ChatContextProvider from './contexts/ChatContext';
 import './scss/styles.scss';
 
 function App() {
-  return (
-    <ChatContextProvider>
-      <Chat/>
-      <SendMsgForm/>
-    </ChatContextProvider>
+    return (
+        <ChatContextProvider>
+            <Chat/>
+            <SendMsgForm/>
+        </ChatContextProvider>
 
-  );
+    );
 }
 
 export default App;
