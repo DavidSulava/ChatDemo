@@ -1,15 +1,17 @@
-import firebase from "firebase";
+import {initializeApp} from "firebase/app"
+import {getFirestore, collection} from "firebase/firestore"
 
-const firebaseApp = firebase.initializeApp({
-    apiKey: "AIzaSyAzpQtoBp61H0i4GooLoKAv3kf1oZEq9fc",
-    authDomain: "chat-react-ba518.firebaseapp.com",
-    databaseURL: "https://chat-react-ba518.firebaseio.com",
-    projectId: "chat-react-ba518",
-    storageBucket: "chat-react-ba518.appspot.com",
-    messagingSenderId: "59129776676",
-    appId: "1:59129776676:web:edc829e3776e54af7e26b1"
+initializeApp({
+    apiKey: "AIzaSyBcnlto9KUNxBtb5znMibJC-KKUnUbY2TI",
+    authDomain: "react-chat---fstore-9.firebaseapp.com",
+    projectId: "react-chat---fstore-9",
+    storageBucket: "react-chat---fstore-9.appspot.com",
+    messagingSenderId: "284610135433",
+    appId: "1:284610135433:web:aa4d19e31fcde4dcce4d58",
+    measurementId: "G-VX0PHJLX47"
 });
 
-const db = firebaseApp.firestore();
+const db = getFirestore();
+export const dbMsgRef = collection(db, 'messages');
 
 export default db;
