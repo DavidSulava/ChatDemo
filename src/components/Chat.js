@@ -26,10 +26,10 @@ function Chat() {
             }}>
                 {
                     context.msgAll.map((el, index) => {
-                        let msgTime = el.created_at.toDate();
+                        let msgTime = el?.created_at?.toDate();
                         //Show time or date.
                         //If the message is not of today the variable is set to display Time, otherwise - to Date.
-                        let timeStamp = msgTime.toLocaleDateString() === currentDate ? msgTime.toLocaleString(userRegion, {timeStyle: 'short'}) : msgTime.toLocaleDateString();
+                        let timeStamp = msgTime?.toLocaleDateString() === currentDate ? msgTime?.toLocaleString(userRegion, {timeStyle: 'short'}) : msgTime?.toLocaleDateString();
                         let msgType = currentUser !== el.name ? 'msg_standart' : 'msg_standart msg_user';
 
                         return (
