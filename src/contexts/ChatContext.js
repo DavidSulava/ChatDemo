@@ -1,5 +1,5 @@
 import React, {createContext, useReducer, useEffect} from 'react';
-import {msgReducer} from '../reducers/msgReducer';
+import {msgReducer, ADD_MSG_All, MSG_PROGRESS, ADD_MSG} from '../reducers/msgReducer';
 import {
     query,
     orderBy,
@@ -29,14 +29,14 @@ const ChatContextProvider = (props) => {
         )
         onSnapshot(respQuery, snapshot => {
             dispatch({
-                type: "ADD_MSG_All",
+                type: ADD_MSG_All,
                 msgAll: snapshot.docs.map(doc => ({id: doc.id, ...doc.data()})),
             })
         });
     }, []);
     useEffect(() => {
         if (state.msgUser.name && state.msgUser.message) {
-            dispatch({type: 'MSG_PROGRESS'});
+            dispatch({type: MSG_PROGRESS});
             if (state.msgUser.message === '$dellAll') {
                 const cQuery = query(
                     dbMsgRef,
@@ -46,18 +46,18 @@ const ChatContextProvider = (props) => {
                     docSnap.forEach((doc) => {
                         deleteDoc(doc.ref); // and not doc.data()
                     });
-                    dispatch({type: 'MSG_PROGRESS'});
+                    dispatch({type: MSG_PROGRESS});
                 });
             } else {
                 addDoc(dbMsgRef, {...state.msgUser})
                     .then(() => {
-                        dispatch({type: 'MSG_PROGRESS'});
+                        dispatch({type: MSG_PROGRESS});
                     })
                     .catch((err) => {
                         console.log(err);
                     });
             }
-            dispatch({type: "ADD_MSG", msgUser: {name: state.msgUser.name, message: ''}});
+            dispatch({type: ADD_MSG, msgUser: {name: state.msgUser.name, message: ''}});
         }
     }, [state.msgUser.name, state.msgUser.message]);
 

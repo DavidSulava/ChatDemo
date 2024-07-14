@@ -6,7 +6,7 @@ import {ChatContext} from '../contexts/ChatContext';
  */
 function Chat() {
     const context = useContext(ChatContext);
-    var currentUser = context.msgUser.name;
+    const currentUser = context.msgUser.name;
 
     const currentDate = new Date().toLocaleDateString();
     const userRegion = navigator.language;
@@ -26,11 +26,11 @@ function Chat() {
             }}>
                 {
                     context.msgAll.map((el, index) => {
-                        let msgTime = el?.created_at?.toDate();
+                        const msgTime = el?.created_at?.toDate();
                         //Show time or date.
                         //If the message is not of today the variable is set to display Time, otherwise - to Date.
-                        let timeStamp = msgTime?.toLocaleDateString() === currentDate ? msgTime?.toLocaleString(userRegion, {timeStyle: 'short'}) : msgTime?.toLocaleDateString();
-                        let msgType = currentUser !== el.name ? 'msg_standart' : 'msg_standart msg_user';
+                        const timeStamp = msgTime?.toLocaleDateString() === currentDate ? msgTime?.toLocaleString(userRegion, {timeStyle: 'short'}) : msgTime?.toLocaleDateString();
+                        const msgType = currentUser !== el.name ? 'msg_standart' : 'msg_standart msg_user';
 
                         return (
                             <li key={el.id}>

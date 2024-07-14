@@ -1,6 +1,7 @@
 import React, {useState, useContext} from 'react'
 import {ChatContext} from '../contexts/ChatContext';
-import { serverTimestamp } from "firebase/firestore";
+import {serverTimestamp} from "firebase/firestore";
+import {ADD_MSG} from "../reducers/msgReducer";
 
 function SendMsgForm(props) {
     const {dispatch} = useContext(ChatContext);
@@ -19,7 +20,7 @@ function SendMsgForm(props) {
             return null;
 
         dispatch({
-            type: "ADD_MSG",
+            type: ADD_MSG,
             msgUser: {
                 created_at: serverTimestamp(),
                 name: user,
